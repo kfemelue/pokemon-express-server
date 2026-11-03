@@ -164,15 +164,17 @@ const pokemonData = [
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.port;
 
 app.use(express.json());
 app.use(cors());
 
+// returns all pokemon
 app.get("/", (request, response, next) => {
   response.status(200).send(JSON.stringify(pokemonData));
 });
 
+// returns a team of six pokemon
 app.get("/team", (request, response, next) => {
   let random = [];
   const n = 6;

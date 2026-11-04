@@ -192,5 +192,5 @@ app.get("/pokemon/team", (request, response, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log("Server is running on http://127.0.0.1:3000");
+  console.log(`Server is running on http://127.0.0.1:${PORT}`);
 });

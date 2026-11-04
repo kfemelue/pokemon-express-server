@@ -161,10 +161,12 @@ const pokemonData = [
   },
 ];
 
+require('dotenv').config();
+
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const PORT = process.env.port;
+const PORT = process.env.port || 3000;
 
 app.use(express.json());
 app.use(cors());
@@ -189,6 +191,6 @@ app.get("/team", (request, response, next) => {
   response.status(200).send(JSON.stringify(random));
 });
 
-app.listen(PORT, "127.0.0.1", () => {
+app.listen(PORT, () => {
   console.log("Server is running on http://127.0.0.1:3000");
 });

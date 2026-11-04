@@ -172,12 +172,12 @@ app.use(express.json());
 app.use(cors());
 
 // returns all pokemon
-app.get("/", (request, response, next) => {
+app.get("/pokemon", (request, response, next) => {
   response.status(200).send(JSON.stringify(pokemonData));
 });
 
 // returns a team of six pokemon
-app.get("/team", (request, response, next) => {
+app.get("/pokemon/team", (request, response, next) => {
   let random = [];
   const n = 6;
   const uniqueIndices = Array.from({ length: pokemonData.length }, (_, i) => i)
